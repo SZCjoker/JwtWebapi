@@ -10,7 +10,7 @@ namespace JwtWebapi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -26,6 +26,7 @@ namespace JwtWebapi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
